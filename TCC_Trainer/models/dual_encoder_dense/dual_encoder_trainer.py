@@ -24,7 +24,7 @@ def test_main(hparams):
                 tokenizer.texts_to_sequences(labels),
                 tokenizer.vocab_size())
 
-    text = "que podemos fazer"
+    text = "Vai fazer algo hoje"
 
     data = pd.read_csv(hparams.dataset_val_path, encoding='utf-8')
     labels = data['Utterance'].values
@@ -74,10 +74,10 @@ def test_main(hparams):
     print("Total number of parameters: %d." % total_parameters)
 
     feed_dict = {input_x: text_enc, input_y: labels_enc}
-    out_value, out_score = sess.run([value, score], feed_dict=feed_dict)
+    out_value = sess.run(value, feed_dict=feed_dict)
     print('out_value: ', out_value)
     print('label: ', labels[out_value])
-    print('score: ', out_score)
+    #print('score: ', out_score)
    
 
 
