@@ -1,5 +1,5 @@
 import os
-from models import dual_encoder_trainer
+from models.dual_encoder_dense import dual_encoder_trainer
 from test_tube import HyperOptArgumentParser
 
 parser = HyperOptArgumentParser(strategy='random_search')
